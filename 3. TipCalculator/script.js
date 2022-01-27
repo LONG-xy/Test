@@ -6,16 +6,23 @@
 
 // Hint: How to get the values from the user input?
 
+// document.getElementById("button-Cal").addEventListener("click",calculate());
 
-function calculate() {
+// () =>{calculate()}
 
+function calculate(){
+  let billAmount = document.getElementById("amount").value;
+  let numGuests = document.getElementById("guests").value;
+  let quality = document.getElementById("quality").value;
+  let tip = (billAmount/numGuests)*quality;
+  console.log(quality);
+  document.getElementById('tip-amount').innerHTML = tip;
+  showTipAmount();
 }
-
 
 function showTipAmount() {
   // Get the snackbar DIV (check the style.css file for more information on this element)
-  let x; // Fill this in
-
+  let x = document.getElementById('tip-amount'); // Fill this in
   // Add the "show" class to DIV
   x.className = "show";
   // After 3 seconds, remove the show class from DIV

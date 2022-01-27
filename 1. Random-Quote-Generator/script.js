@@ -6,6 +6,11 @@
 // Hint: Remember how key-value sets work
 // Hint: Math.random() returns a floating-point, pseudo-random number in the range [0, 1)
 
+
+document.querySelector("#generate").addEventListener("click", () =>{display()});
+
+display = ()=> {
+
 // Use this object as needed
 let quotes = {
     "- Walt Disney": '"The Way Get Started Is To Quit Talking And Begin Doing."',
@@ -43,3 +48,11 @@ let quotes = {
     "- Booker T. Washington": '"Few things can help an individual more than to place responsibility on him, and to let him know that you trust him."'
 };
 
+let keys = Object.keys(quotes)
+console.log(keys)
+let author = keys[Math.floor(Math.random() * keys.length)]
+let quote = quotes[author]
+document.getElementById("author").innerHTML = author;
+document.getElementById("quote").innerHTML = quote;
+
+}
